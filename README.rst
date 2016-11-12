@@ -9,7 +9,7 @@ Human-friendly numeric parser.
 
 Supported features:
 
-* Supports for underscore or apostrophe in numbers `1_000` → 1000
+* Supports for underscore in numbers `1_000` → 1000
 * ``k``, ``M``, ``G`` -- decimal suffixes ``25M`` → 25000000
 * ``ki``, ``Mi``, ``Gi`` -- binary suffixes ``8Ki`` → 8192
 * ``0x``, ``0o``, ``0b`` -- prefixes numeral systems
