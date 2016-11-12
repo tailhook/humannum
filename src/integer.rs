@@ -4,6 +4,15 @@ use {Error, NUMERIC_SUFFIXES};
 
 
 /// Parse integer value from string
+///
+/// Supported syntax:
+///
+/// * Supports for underscore in numbers `1_000` → 1000
+/// * ``k``, ``M``, ``G`` -- decimal suffixes ``25M`` → 25000000
+/// * ``ki``, ``Mi``, ``Gi`` -- binary suffixes ``8Ki`` → 8192
+/// * ``0x``, ``0o``, ``0b`` -- prefixes numeral systems
+/// * ``0xFF`` → 255, ``0o40`` → 32, ``0b11`` → 3
+///
 pub fn parse_integer<I: PrimInt>(mut src: &str) -> Result<I, Error> {
     let mut mult = I::from(1).unwrap();
     src = src.trim();
